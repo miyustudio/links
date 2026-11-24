@@ -1,0 +1,217 @@
+:root{
+  --wine:#51182f;
+  --wine-soft:#6e2744;
+  --cream:#f8f4ef;
+  --tile:#fffaf6;
+  --muted:#8c6b77;
+  --line:#e7d9df;
+  --shadow:0 10px 24px rgba(81,24,47,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  min-height:100svh;
+  background:
+    radial-gradient(circle at top center, rgba(255,255,255,.7) 0%, rgba(255,255,255,0) 38%),
+    var(--cream);
+  color:var(--wine);
+  font-family:'Nunito Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+main{
+  max-width:520px;
+  margin:0 auto;
+  padding:42px 22px 32px;
+}
+.hero{
+  text-align:center;
+  margin-bottom:34px;
+}
+.hero-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:52px;
+  color:var(--wine);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+.logo{
+  width:154px;
+  height:154px;
+  display:block;
+  margin:0 auto;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:
+    0 0 0 5px var(--cream),
+    0 0 0 8px var(--wine);
+}
+.hero-copy{
+  margin:34px auto 0;
+  max-width:400px;
+  color:var(--wine);
+  font-size:clamp(18px,4.8vw,24px);
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.01em;
+}
+.ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin:28px 0 46px;
+  color:var(--wine);
+}
+.ornament span{
+  width:78px;
+  height:2px;
+  border-radius:999px;
+  background:var(--wine);
+  opacity:.8;
+}
+.ornament i{
+  font-style:normal;
+  font-size:16px;
+  line-height:1;
+}
+.section-label{
+  margin-bottom:16px;
+  color:var(--wine);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+#links{display:grid;gap:14px}
+.tile{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:96px;
+  padding:18px 18px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:var(--tile);
+  color:var(--wine);
+  text-decoration:none;
+  box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.tile.featured{
+  background:var(--wine);
+  border-color:var(--wine);
+  color:var(--cream);
+}
+.tile:not(.disabled):hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(81,24,47,.14);
+}
+.tile:focus-visible,.social:focus-visible,.contact:focus-visible{
+  outline:3px solid #b27b94;
+  outline-offset:4px;
+}
+.symbol{
+  display:grid;
+  place-items:center;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  flex:none;
+  border:2px solid currentColor;
+  background:transparent;
+}
+.symbol svg,.social svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.75;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.tile-copy{flex:1;min-width:0}
+.tile strong{
+  display:block;
+  font-size:16px;
+  font-weight:900;
+  line-height:1.15;
+}
+.tile small{
+  display:block;
+  margin-top:5px;
+  font-size:12px;
+  line-height:1.35;
+  opacity:.92;
+  font-weight:700;
+}
+.arrow{
+  font-size:30px;
+  line-height:1;
+  font-weight:700;
+}
+.disabled{
+  opacity:.74;
+}
+.disabled .arrow{
+  font-size:11px;
+  letter-spacing:.03em;
+  font-weight:800;
+}
+.contact{
+  display:block;
+  margin-top:22px;
+  padding:14px 18px;
+  border-radius:999px;
+  border:2px solid var(--wine);
+  color:var(--wine);
+  text-decoration:none;
+  text-align:center;
+  font-weight:900;
+  background:transparent;
+}
+.contact.disabled{opacity:.6}
+footer{
+  margin-top:30px;
+  text-align:center;
+}
+#socials{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+.social{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  color:var(--wine);
+  background:#fffaf7;
+  text-decoration:none;
+}
+footer p{
+  margin:22px 0 8px;
+  color:var(--muted);
+  font-size:15px;
+  font-weight:700;
+}
+footer small{
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:.06em;
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important}
+}
+@media (max-width:380px){
+  main{padding:34px 16px 28px}
+  .hero-meta{font-size:11px; letter-spacing:.15em; margin-bottom:42px}
+  .logo{width:140px;height:140px}
+  .hero-copy{font-size:20px}
+  .ornament span{width:62px}
+  .tile{padding:16px 14px; border-radius:20px; min-height:88px}
+  .tile strong{font-size:15px}
+}
